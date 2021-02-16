@@ -1,7 +1,7 @@
 class Character {
   constructor() {
     this.maxLeft = 0;
-    this.maxRight = 865;
+    this.maxRight = 910;
     this.x = 50;
     this.y = 0;
     this.floor = 570;
