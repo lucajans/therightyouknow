@@ -6,7 +6,7 @@ class Zombie {
     this.width = 90;
     this.height = 150;
     this.warning =
-      "Puny millennial! I want your brain so I can bind it into an eternal internship. \n \nSee if you can avoid the skulls of those who I have already sucked dry.";
+      "Puny millennial! I want your brain so I can bind it into an eternal unpaid git internship. \n \nSee if you can avoid the skulls of those whom I have already sucked dry.";
   }
   draw() {
     if (this.x >= 850) {
