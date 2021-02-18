@@ -6,7 +6,7 @@ class Zombie {
     this.width = 90;
     this.height = 150;
     this.warning =
-      "Puny millennial! I want your brain so I can bind it into an eternal unpaid git internship. \n \nSee if you can avoid the skulls of those whom I have already sucked dry.";
+      "Puny millennial! I want your brain so I can bind it into an eternal unpaid internship. \n \nSee if you can avoid the skulls of those whom I have already sucked dry.";
   }
   draw() {
     if (this.x >= 850) {
@@ -14,8 +14,10 @@ class Zombie {
       image(zombieFacingLeft, this.x, this.y, this.width, this.height);
     } else {
       image(zombieFacingLeft, this.x, this.y, this.width, this.height);
-      rect(680, 450, 220, 105);
-      text(this.warning, 690, 460, 210, 100);
+      rect(250, 125, 425, 200);
+      textFont(zombieFont);
+      textSize(25);
+      text(this.warning, 275, 140, 400, 290);
     }
   }
 }

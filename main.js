@@ -7,6 +7,7 @@ function preload() {
   theBoyLyingDown = loadImage("./The_boy/Liedown.png");
   zombieFacingLeft = loadImage("./assets/zombie.png");
   skullForAttack = loadImage("./assets/skull.png");
+  zombieFont = loadFont("./assets/zombietext.ttf");
 }
 function draw() {
   clear();
