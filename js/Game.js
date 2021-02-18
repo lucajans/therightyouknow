@@ -16,7 +16,7 @@ class Game {
     this.background.draw();
     this.character.draw();
     this.zombie.draw();
-    if (frameCount % 90 === 0) {
+    if (frameCount % 150 === 0) {
       this.skulls.push(new Skull());
     }
     this.skulls.forEach((skull, index) => {
