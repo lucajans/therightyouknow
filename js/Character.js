@@ -13,30 +13,10 @@ class Character {
   }
 
   keyPressed() {
-    // if (keyIsDown(RIGHT_ARROW)) {
-    //   this.moveRight();
-    // }
-    // if (keyIsDown(LEFT_ARROW)) {
-    //   this.moveLeft();
-    // }
     if (keyCode === 38) {
       this.jump();
     }
   }
-
-  // moveRight() {
-  //   this.x += 25;
-  //   if (this.x >= this.maxRight) {
-  //     this.x = this.maxRight;
-  //   }
-  // }
-
-  // moveLeft() {
-  //   this.x -= 25;
-  //   if (this.x <= this.maxLeft) {
-  //     this.x = this.maxLeft;
-  //   }
-  // }
 
   jump() {
     if (this.jumpcount === 2) {
