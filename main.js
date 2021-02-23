@@ -8,6 +8,8 @@ function preload() {
   zombieFacingLeft = loadImage("./assets/zombie.png");
   skullForAttack = loadImage("./assets/skull.png");
   zombieFont = loadFont("./assets/zombietext.ttf");
+  weapon = loadImage("./assets/diplomatwo.png");
+  heart = loadImage("./assets/heart.png");
 }
 function draw() {
   clear();

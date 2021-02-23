@@ -29,14 +29,14 @@ class Character {
 
   draw() {
     if (keyIsDown(RIGHT_ARROW)) {
-      this.x += 1;
+      this.x += 2;
       this.direction = "right";
       if (this.x >= this.maxRight) {
         this.x = this.maxRight;
       }
     }
     if (keyIsDown(LEFT_ARROW)) {
-      this.x -= 1;
+      this.x -= 2;
       this.direction = "left";
       if (this.x <= this.maxLeft) {
         this.x = this.maxLeft;

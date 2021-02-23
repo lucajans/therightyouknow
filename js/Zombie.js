@@ -12,12 +12,14 @@ class Zombie {
     if (this.x >= 850) {
       this.x -= 0.3;
       image(zombieFacingLeft, this.x, this.y, this.width, this.height);
-    } else {
-      image(zombieFacingLeft, this.x, this.y, this.width, this.height);
-      rect(250, 125, 425, 200);
-      textFont(zombieFont);
-      textSize(25);
-      text(this.warning, 275, 140, 400, 290);
     }
+    image(zombieFacingLeft, this.x, this.y, this.width, this.height);
+    // else {
+    //   image(zombieFacingLeft, this.x, this.y, this.width, this.height);
+    //   rect(250, 125, 425, 200);
+    //   textFont(zombieFont);
+    //   textSize(25);
+    //   text(this.warning, 275, 140, 400, 290);
+    // }
   }
 }
