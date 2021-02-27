@@ -4,20 +4,25 @@ class Game {
     this.character = new Character();
     this.zombie = new Zombie();
     this.weapon = new Weapon();
-    this.heart = new Heart();
+    // this.heart = new Heart();
     this.skulls = [];
     this.weapons = [];
-    this.hearts = [new Heart(), new Heart(), new Heart()];
+    this.hearts = [];
+    this.counter = 0;
+    this.gameover = "YOU LOST!";
   }
   setup() {
-    while (this.hearts.length <= 3) {
-      this.hearts.push();
+    let currentX = 750;
+    while (this.hearts.length < 3) {
+      this.hearts.push(new Heart(currentX));
+      // if (this.hearts.length > 0) {
+      currentX += 50;
+      // }
     }
   }
 
   keyPressed() {
     this.character.keyPressed();
-    this.weapon.keyPressed();
   }
 
   draw() {
@@ -35,25 +40,36 @@ class Game {
     if (frameCount % 150 === 0) {
       this.skulls.push(new Skull());
     }
-    this.skulls.forEach((skull, index) => {
+    this.skulls.forEach((skull, indexOfSkull) => {
       skull.draw();
+      this.weapons.forEach((weapon, indexOfWeapon) => {
+        if (this.collisionCheckTwo(weapon, skull)) {
+          console.log("The weapon is successful!");
+          this.skulls.splice(this.skulls[indexOfSkull], 1);
+          this.weapons.splice(this.weapons[indexOfWeapon], 1);
+        }
+      });
       if (skull.x <= -skull.width) {
-        this.skulls.splice(index, 1);
+        this.skulls.splice(indexOfSkull, 1);
       }
       if (this.collisionCheck(this.character, skull)) {
         console.log("You got hit by a skull.");
-        this.skulls.splice(this.skulls.indexOf(skull), 1);
+        this.skulls.splice(this.skulls[indexOfSkull], 1);
+        this.counter++;
         this.hearts.pop(Heart);
-      }
-      if (this.collisionCheckTwo(this.weapon, skull)) {
-        console.log("The weapon is successful!");
-        this.skulls.splice(this.skulls.indexOf(skull), 1);
       }
     });
 
     this.hearts.forEach((heart) => {
       heart.draw();
     });
+    if (this.counter === 3) {
+      rect(300, 300, 400, 150);
+      textFont(zombieFont);
+      textSize(100);
+      text(this.gameover, 325, 310, 400, 270);
+      // button.position(400, 400);
+    }
   }
 
   collisionCheck(character, skull) {

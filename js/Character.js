@@ -16,6 +16,9 @@ class Character {
     if (keyCode === 38) {
       this.jump();
     }
+    if (keyCode === 32) {
+      game.weapons.push(new Weapon(this.x));
+    }
   }
 
   jump() {

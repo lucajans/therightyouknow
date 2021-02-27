@@ -1,14 +1,9 @@
 class Weapon {
-  constructor() {
+  constructor(characterX) {
     this.width = 50;
     this.height = 50;
-    this.y = 570;
-    this.x = 50;
-  }
-  keyPressed() {
-    if (keyCode === 32) {
-      game.weapons.push(new Weapon());
-    }
+    this.y = 600;
+    this.x = characterX + 10;
   }
 
   draw() {

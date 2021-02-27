@@ -7,7 +7,9 @@ class Skull {
   }
 
   draw() {
-    this.x -= 2;
-    image(skullForAttack, this.x, this.y, this.width, this.height);
+    if (game.counter < 3) {
+      this.x -= 2;
+      image(skullForAttack, this.x, this.y, this.width, this.height);
+    }
   }
 }
